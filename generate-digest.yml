@@ -1,0 +1,32 @@
+name: Generate Newsletter Digest
+
+on:
+  schedule:
+    - cron: '0 4 * * *'  # Runs every day at 09:30 AM IST (4:00 AM UTC)
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Generate newsletter digest
+        run: python generate_digest.py
+
+      - name: Commit RSS feed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add watts-up-india-digest.xml
+          git commit -m "Update daily digest"
+          git push
