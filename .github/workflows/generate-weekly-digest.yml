@@ -8,8 +8,6 @@ on:
 jobs:
   weekly-digest:
     runs-on: ubuntu-latest
-    env:
-  OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v3
@@ -23,6 +21,8 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Generate digest
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: python generate_digest.py
 
       - name: Commit and push digest
