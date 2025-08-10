@@ -21,8 +21,8 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Generate digest
-        env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+       - name: Generate digest
+  run: OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }} python generate_digest.py
         run: python generate_digest.py
 
       - name: Commit and push digest
