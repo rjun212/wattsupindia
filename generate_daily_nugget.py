@@ -13,5 +13,5 @@ nugget = f"""### {today}
 #IndiaRE #CleanEnergy
 """
 
-with open("content/weekly-nuggets.md", "a") as f:
+with open("weekly-nuggets.md", "a") as f:
     f.write("\n" + nugget.strip() + "\n")
