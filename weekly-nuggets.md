@@ -3827,3 +3827,12 @@ This file collects all daily LinkedIn/X-style updates for use in the weekly news
 • Renewables +14.4%, hydro +22.4%, coal -4.2%
 
 #IndiaRE #CleanEnergy
+
+### 2026-10-09
+🇮🇳 RE India update:
+
+• NTPC green ammonia wins at ₹51.8/kg  
+• Haryana solarizes 2.2 lakh rooftops  
+• Renewables +14.4%, hydro +22.4%, coal -4.2%
+
+#IndiaRE #CleanEnergy
